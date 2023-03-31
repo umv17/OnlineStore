@@ -77,6 +77,7 @@ docker-compose exec web python manage.py loaddata tests/fixtures/*.json
 ### Configure photo upload settings:
 
 1. Run the Minio service, create Buckets and Access Keys; modify the corresponding parameters in the .env settings file.
+
 2. Access the Minio service:
 
 ```bash
@@ -88,6 +89,12 @@ http://127.0.0.1:9090/
 ```bash
 docker-compose down
 docker-compose up
+```
+
+### Run a test suite:
+
+```bash 
+docker-compose exec web pytest
 ```
 
 ### Author:
