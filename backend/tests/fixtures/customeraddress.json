@@ -1,0 +1,50 @@
+[
+  {
+    "model": "customers.customeraddress",
+    "pk": 1,
+    "fields": {
+      "city": "New York",
+      "address": "1 Main St",
+      "post_code": "27851",
+      "customer": 1,
+      "country": "United States",
+      "state": "NY"
+    }
+  },
+  {
+    "model": "customers.customeraddress",
+    "pk": 2,
+    "fields": {
+      "city": "Los Angeles",
+      "address": "426 Maple Ave",
+      "post_code": "90007",
+      "customer": 2,
+      "country": "United States",
+      "state": "CA"
+    }
+  },
+  {
+    "model": "customers.customeraddress",
+    "pk": 3,
+    "fields": {
+      "city": "Chicago",
+      "address": "701 Oak St",
+      "post_code": "70601",
+      "customer": 3,
+      "country": "United States",
+      "state": "IL"
+    }
+  },
+  {
+    "model": "customers.customeraddress",
+    "pk": 4,
+    "fields": {
+      "city": "Houston",
+      "address": "1011 Elm St",
+      "post_code": "77002",
+      "customer": 4,
+      "country": "United States",
+      "state": "TX"
+    }
+  }
+]

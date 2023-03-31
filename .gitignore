@@ -1,0 +1,28 @@
+# env
+.env
+env
+venv
+
+# logs
+logs
+
+# cache
+__pycache__
+*.pyc
+
+# static, media
+static
+media
+doc
+minio
+
+# db
+db.sqlite3
+
+# migrations
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+# other
+.idea

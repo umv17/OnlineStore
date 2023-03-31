@@ -1,0 +1,34 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "title": "Running",
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "title": "Soccer",
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "title": "Basketball",
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "title": "Tennis",
+      "is_active": false
+    }
+  }
+]

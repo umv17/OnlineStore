@@ -1,0 +1,134 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "title": "Nike Air Zoom Pegasus 38",
+      "price": 120,
+      "old_price": 0,
+      "quantity": 1000,
+      "brand": 1,
+      "description": "The Nike Air Zoom Pegasus 38 is a reliable and comfortable running shoe."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "title": "Adidas Predator Freak.1 FG",
+      "price": 220,
+      "old_price": 0,
+      "quantity": 500,
+      "brand": 2,
+      "description": "The Adidas Predator Freak.1 FG is a top-of-the-line soccer cleat."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "title": "Puma Clyde All-Pro Basketball Shoes",
+      "price": 150,
+      "old_price": 0,
+      "quantity": 7,
+      "brand": 3,
+      "description": "The Puma Clyde All-Pro is a high-performance basketball shoe with a stylish design."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "title": "Reebok Court Victory Pump",
+      "price": 180,
+      "old_price": 0,
+      "quantity": 8,
+      "brand": 4,
+      "description": "The Reebok Court Victory Pump is a classic tennis shoe with modern technology."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "title": "Nike Air Max 2090",
+      "price": 160,
+      "old_price": 0,
+      "quantity": 12,
+      "brand": 1,
+      "description": "The Nike Air Max 2090 is a modern and stylish sneaker with a comfortable fit."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "title": "Adidas Ultraboost 21",
+      "price": 180,
+      "old_price": 0,
+      "quantity": 9,
+      "brand": 2,
+      "description": "The Adidas Ultraboost 21 is a top-of-the-line running shoe with responsive cushioning."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "title": "Puma RS-2K",
+      "price": 120,
+      "old_price": 0,
+      "quantity": 15,
+      "brand": 3,
+      "description": "The Puma RS-2K is a comfortable and stylish sneaker with a futuristic design."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "title": "Reebok Classic Leather",
+      "price": 90,
+      "old_price": 0,
+      "quantity": 200,
+      "brand": 4,
+      "description": "The Reebok Classic Leather is a timeless sneaker that never goes out of style."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "title": "New Balance Fresh Foam 1080v11",
+      "price": 150,
+      "old_price": 0,
+      "quantity": 700,
+      "brand": 1,
+      "description": "The New Balance Fresh Foam 1080v11 is a versatile running shoe with a comfortable and supportive fit."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "title": "Under Armour HOVR Sonic 4",
+      "price": 110,
+      "old_price": 0,
+      "quantity": 10,
+      "brand": 2,
+      "description": "The Under Armour HOVR Sonic 4 is a lightweight and breathable running shoe with a responsive feel."
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "title": "Asics Gel-Kayano 28",
+      "price": 160,
+      "old_price": 0,
+      "quantity": 8,
+      "brand": 3,
+      "description": "The Asics Gel-Kayano 28 is a stability running shoe with a comfortable and supportive fit."
+    }
+  }
+]

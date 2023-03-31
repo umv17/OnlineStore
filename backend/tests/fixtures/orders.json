@@ -1,0 +1,26 @@
+[
+  {
+    "model": "orders.order",
+    "pk": 1,
+    "fields": {
+      "time_created": "2022-03-15T12:00:00Z",
+      "time_checkout": "2022-03-15T15:00:00Z",
+      "time_delivery": null,
+      "customer": 1,
+      "customer_shipping_address": 1,
+      "is_ordered": false
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 2,
+    "fields": {
+      "time_created": "2022-03-14T12:00:00Z",
+      "time_checkout": null,
+      "time_delivery": null,
+      "customer": 2,
+      "customer_shipping_address": 2,
+      "is_ordered": true
+    }
+  }
+]

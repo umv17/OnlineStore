@@ -1,0 +1,34 @@
+[
+  {
+    "model": "products.productreview",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "review": "These shoes are amazing! They are very comfortable and provide excellent support for running."
+    }
+  },
+  {
+    "model": "products.productreview",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "review": "These soccer cleats are top-quality. They provide great traction and feel very secure on my feet."
+    }
+  },
+  {
+    "model": "products.productreview",
+    "pk": 3,
+    "fields": {
+      "product": 3,
+      "review": "I love these basketball shoes! They look great and feel very comfortable. They provide good grip on the court."
+    }
+  },
+  {
+    "model": "products.productreview",
+    "pk": 4,
+    "fields": {
+      "product": 4,
+      "review": "These tennis shoes are a classic. They look great and provide good support for playing tennis."
+    }
+  }
+]

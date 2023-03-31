@@ -1,0 +1,57 @@
+version: '3.3'
+services:
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - databasestore:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+
+  web:
+    build: ../backend
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn core.wsgi:application --bind 0:8000
+    # command: python manage.py collectstatic --no-input ; gunicorn core.wsgi:application --bind 0:8000
+    # command: sh -c "python manage.py collectstatic --no-input && gunicorn core.wsgi:application --bind 0:8000"
+    volumes:
+      - ./backend:/app/backend
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    volumes:
+      - D:\minio\data:/data
+      - D:\minio\config:/root/.minio
+    command: server /data --console-address '0.0.0.0:9090'
+    env_file:
+      - ./.env
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - static_volume:/app/static
+      - media_volume:/app/media
+    depends_on:
+      - web
+
+volumes:
+  databasestore:
+  static_volume:
+  media_volume:
