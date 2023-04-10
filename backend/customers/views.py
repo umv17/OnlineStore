@@ -53,3 +53,11 @@ class CustomerOrder(CustomGenericViewSet):
 
     def get_queryset(self):
         return Order.objects.filter(customer__user=self.request.user)
+
+
+class GetAuthCustomer(CustomGenericViewSet):
+    serializer_class = CustomerSerializer
+
+    def get_object(self):
+        customer = get_object_or_404(Customer, user=self.request.user)
+        return customer
