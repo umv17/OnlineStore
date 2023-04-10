@@ -7,7 +7,7 @@ urlpatterns = [
          UpdateCart.as_view(), name='updatecart'),
     path('cart/list/<slug:customer_token>/',
          OrderList.as_view(), name='customer_orderlist'),
-    path('finalize', OrderFinalize.as_view(
-        {'post': 'create'}), name='orderfinalize'),
+    path('finalize/', OrderFinalize.as_view(
+        {'put': 'update'}), name='orderfinalize'),
 
 ]

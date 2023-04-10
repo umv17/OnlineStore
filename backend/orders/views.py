@@ -79,12 +79,13 @@ class OrderList(generics.ListAPIView):
         return OrderProduct.objects.filter(order__customer=customer, order__is_ordered=False)
 
 
-class OrderFinalize(CreateModelMixin, GenericViewSet, RequiredFieldsMixin):
+# class OrderFinalize(CreateModelMixin, GenericViewSet, RequiredFieldsMixin):
+class OrderFinalize(UpdateModelMixin, GenericViewSet, RequiredFieldsMixin):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
     required_fields = ['token', 'country', 'city', 'post_code', 'address']
 
-    def create(self, request, *args, **kwargs):
+    def update(self, request, *args, **kwargs):
         self.check_required_fields(request.data)
 
         try:
