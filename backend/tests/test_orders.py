@@ -72,6 +72,6 @@ def test_order_finalize(db, api_client):
         'post_code': '12345',
         'address': 'Test Address'
     }
-    response = api_client.post(url, data=data)
+    response = api_client.put(url, data=data)
     assert response.status_code == 200
     assert response.data['is_ordered'] == True

@@ -103,7 +103,7 @@
       "price": 150,
       "old_price": 0,
       "quantity": 700,
-      "brand": 1,
+      "brand": 6,
       "description": "The New Balance Fresh Foam 1080v11 is a versatile running shoe with a comfortable and supportive fit."
     }
   },
@@ -115,7 +115,7 @@
       "price": 110,
       "old_price": 0,
       "quantity": 10,
-      "brand": 2,
+      "brand": 5,
       "description": "The Under Armour HOVR Sonic 4 is a lightweight and breathable running shoe with a responsive feel."
     }
   },
@@ -127,7 +127,7 @@
       "price": 160,
       "old_price": 0,
       "quantity": 8,
-      "brand": 3,
+      "brand": 7,
       "description": "The Asics Gel-Kayano 28 is a stability running shoe with a comfortable and supportive fit."
     }
   }

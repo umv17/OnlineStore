@@ -26,5 +26,29 @@
     "fields": {
       "title": "Reebok"
     }
+  },
+  {
+    "model": "products.brand",
+    "pk": 5,
+    "fields": {
+      "title": "Under Armour"
+    }
+  },
+  {
+    "model": "products.brand",
+    "pk": 6,
+    "fields": {
+      "title": "New Balance"
+    }
+  },
+  {
+    "model": "products.brand",
+    "pk": 7,
+    "fields": {
+      "title": "Asics"
+    }
   }
+
+
+
 ]
