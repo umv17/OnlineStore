@@ -5,12 +5,19 @@ from django.utils.http import urlencode
 from django.utils.html import format_html
 
 
+class ProductCategoryInline(admin.TabularInline):
+    model = ProductCategory
+    extra = 1
+    # max_num = 1
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'price', 'old_price',
                     'description', 'quantity', 'brand', 'show_categories', ]
     search_fields = ['title', 'description',
                      'brand__title', ]
+    inlines = [ProductCategoryInline]
 
     def show_categories(self, obj):
         return '\n'.join([str(a.category) for a in obj.productcategory_set.all()])
@@ -30,8 +37,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ['title', ]
 
     def product_count(self, obj):
-        count = obj.productcategory_set.count()
-        print(count)
+        count = obj.category_products.count()
         url = (
             reverse('admin:products_productcategory_changelist')
             + '?'
