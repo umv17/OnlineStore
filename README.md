@@ -13,6 +13,7 @@ OnlineStore is a web-based platform for selling and buying goods and services. I
 ### The project includes 3 services:
 
 - backend - the backend image of the project
+- frontend - the frontend image of the project
 - postgres - the PostgreSQL database image
 - nginx - the nginx web server image
 
@@ -30,48 +31,40 @@ git clone https://github.com/umv17/OnlineStore
 
 2. Navigate to the infra folder and create a settings file '.env'; an example file can be viewed in '.env.example'.
 
-3. In the docker-compose.yml file, you need to change the parameters, if you do not have a 'D:' drive
-```yaml
-
-volumes:
-  - D:\minio\data:/data  
-  - D:\minio\config:/root/.minio
-```
-
-4. Build the images with
+3. Build the images with
 
 ```bash 
 docker-compose up --build
 ``` 
 ### Perform initial setup:
 
-1. Make migrations:
+4. Make migrations:
 
 ```bash 
-docker-compose exec web python manage.py makemigrations
+docker-compose exec backend python manage.py makemigrations
 ```
-2. Migrate the database:
+5. Migrate the database:
 
 ```bash 
-docker-compose exec web python manage.py migrate
-```
-
-3. Create a superuser:
-
-```bash 
-docker-compose exec web python manage.py createsuperuser
+docker-compose exec backend python manage.py migrate
 ```
 
-4. Collect static files:
+6. Create a superuser:
 
 ```bash 
-docker-compose exec web python manage.py collectstatic --no-input
+docker-compose exec backend python manage.py createsuperuser
 ```
 
-5. Load example dataset:
+7. Collect static files:
 
 ```bash 
-docker-compose exec web python manage.py loaddata tests/fixtures/*.json
+docker-compose exec backend python manage.py collectstatic --no-input
+```
+
+8. Load example dataset:
+
+```bash 
+docker-compose exec backend bash -c "shopt -s globstar; python manage.py loaddata /app/tests/fixtures/**/*.json"
 ```
 
 ### Configure photo upload settings:
@@ -94,7 +87,7 @@ docker-compose up
 ### Run a test suite:
 
 ```bash 
-docker-compose exec web pytest
+docker-compose exec backend pytest
 ```
 
 ### Author:

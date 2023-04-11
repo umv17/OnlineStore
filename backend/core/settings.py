@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('ENV_SECRET_KEY')
 # DEBUG = True
 DEBUG = os.getenv("DEBUG_STATUS")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -173,6 +173,12 @@ DATABASES = {
         'USER': os.getenv('POSTGRES_USER', default='postgres'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='postgres'),
         'HOST': os.getenv('DB_HOST', default='localhost'),
+        # 'HOST': 'db',
         'PORT': os.getenv('DB_PORT', default=5432)
     }
 }
+
+# CORS_ALLOWED_ORIGINS = [
+#     "http://127.0.0.1:3000",
+#     "http://localhost:3000"
+# ]

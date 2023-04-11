@@ -1,40 +1,39 @@
-version: '3.3'
+version: '3.8'
 services:
 
   db:
     image: postgres:15-alpine
-    ports:
-      - "5432:5432"
     volumes:
       - databasestore:/var/lib/postgresql/data/
     env_file:
       - ./.env
 
-  web:
+  backend:
     build: ../backend
-    # command: python manage.py runserver 0.0.0.0:8000
-    command: gunicorn core.wsgi:application --bind 0:8000
-    # command: python manage.py collectstatic --no-input ; gunicorn core.wsgi:application --bind 0:8000
-    # command: sh -c "python manage.py collectstatic --no-input && gunicorn core.wsgi:application --bind 0:8000"
+    restart: always
     volumes:
-      - ./backend:/app/backend
-      - static_volume:/app/static
-      - media_volume:/app/media
-    ports:
-      - "8000:8000"
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - db
     env_file:
       - ./.env
 
+  frontend:
+    build: ../frontend
+    volumes:
+      - build_folder:/app/result_build/
+    depends_on:
+      - backend
+
   minio:
     image: minio/minio
     ports:
-      - "9000:9000"
-      - "9090:9090"
+      - "${MINIO_PORT}:9000"
+      - "${MINIO_CONSOLE_PORT}:9090"
     volumes:
-      - D:\minio\data:/data
-      - D:\minio\config:/root/.minio
+      - minio_data:/data
+      - minio_config:/root/.minio
     command: server /data --console-address '0.0.0.0:9090'
     env_file:
       - ./.env
@@ -43,15 +42,22 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "80:80"
+      - "${NGINX_PORT}:80"
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - static_volume:/app/static
-      - media_volume:/app/media
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - build_folder:/usr/share/nginx/html/
+      - static_value:/app/static/
+      - media_value:/app/media/
+
     depends_on:
-      - web
+      - backend
+      - frontend
+      - minio
 
 volumes:
   databasestore:
-  static_volume:
-  media_volume:
+  static_value:
+  media_value:
+  build_folder:
+  minio_data:
+  minio_config:

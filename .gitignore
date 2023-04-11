@@ -12,12 +12,8 @@ __pycache__
 
 # static, media
 static
-media
 doc
 minio
-
-# db
-db.sqlite3
 
 # migrations
 **/migrations/**
@@ -26,3 +22,18 @@ db.sqlite3
 
 # other
 .idea
+
+/node_modules
+/.idea
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+*.log*
+
+
