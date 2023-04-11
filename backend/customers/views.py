@@ -57,6 +57,7 @@ class CustomerOrder(CustomGenericViewSet):
 
 class GetAuthCustomer(CustomGenericViewSet):
     serializer_class = CustomerSerializer
+    queryset = Customer.objects.all()
 
     def get_object(self):
         customer = get_object_or_404(Customer, user=self.request.user)
