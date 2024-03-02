@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.13.0a4-slim
 WORKDIR /app
 COPY . .
 RUN pip3 install --upgrade pip && pip3 install -r requirements.txt --no-cache-dir
